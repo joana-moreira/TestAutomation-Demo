@@ -1,6 +1,3 @@
-import { defineConfig } from '@playwright/test';
-
-
 // @ts-check
 const { defineConfig, devices } = require('@playwright/test');
 
@@ -24,7 +21,7 @@ module.exports = defineConfig({
   /* Opt out of parallel tests on CI. */
   workers: process.env.CI ? 1 : undefined,
   /* Glob patterns or regular expressions that match test files.*/
-  testMatch: '*todo-tests/*.spec.ts',
+  //testMatch: '*.spec.js',
   /* Reporter to use. See https://playwright.dev/docs/test-reporters */
   reporter: 'html',
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
