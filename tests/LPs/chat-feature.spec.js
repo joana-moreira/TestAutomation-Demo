@@ -3,7 +3,7 @@ const { test, expect } = require('@playwright/test');
 
 //Config
 test.beforeEach(async ({ page }) => {
-  await page.goto('https://meet.swordhealth.com/');
+  await page.goto('https://landing.staging.swordhealth.com/');
 });
 
 //Main test: Chat feature  
@@ -24,8 +24,6 @@ test.describe('Chat feature', () => {
     // User confirms element is visible on chat form
     await expect(chatFrame.getByTestId('button-ok')).toBeVisible();
     })
-
-
 
   //Test 2: Fill in form and send 
   test('User fills in the form', async ({ page }) => {
@@ -51,4 +49,5 @@ test.describe('Chat feature', () => {
     // This might need a condition if the chat is not during open hours
     await expect(chatFrame.getByTestId('chat-footer-desktop')).toBeVisible();
   })
+  
 })
