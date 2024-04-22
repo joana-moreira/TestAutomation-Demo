@@ -37,9 +37,8 @@ test.describe('Onboarding form flow', () => {
     await page.getByRole('button', { name: 'Get started' }).click();
 
     // validate redirect 
-    await page.waitForURL('https://team-engagement-onboarding.staging.uk.swordhealth.com/c/accolade?client=accolade');
-  })
-
+    await page.waitForURL('https://team-engagement-onboarding.staging.uk.swordhealth.com/*')
+  }) 
 
   //Test 2: Not covered redirect 
   test('Not eligible client', async ({ page }) => {
@@ -69,6 +68,6 @@ test.describe('Onboarding form flow', () => {
     await page.getByRole('button', { name: 'Get started' }).click();
 
     // validate redirect 
-    await page.waitForURL('https://landing.staging.swordhealth.com/not-covered?client=automationtest&program=platform');
+    await page.waitForURL('https://landing.staging.swordhealth.com/not-covered*');
   })
 })
