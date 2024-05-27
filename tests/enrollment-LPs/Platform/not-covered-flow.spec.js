@@ -40,7 +40,7 @@ test.describe('Not covered flow', () => {
     expect(page.getByLabel('Enter your employer or plan')).toHaveValue("lorem");
 
     await page.locator('.css-1l8uzyq-container').click();
-    await page.locator(('div[id^="react-select-product-option-"]')).nth(2).click();
+    await page.locator('div[id^="react-select-product-option-"]').nth(2).click();
 
     await page.locator(('.radio-label-wrapper')).nth(1).click();
 
@@ -111,7 +111,7 @@ test.describe('Not covered flow', () => {
     await input.click()
     await input.fill('lorem')
     
-    const dropdownList = await page.$('.css-tld14u-menu');
+    const dropdownList = await page.waitForSelector('.css-tld14u-menu');
     const client = await dropdownList.waitForSelector('div[id="react-select-companies-option-0"]');
     await client.click();
 
@@ -120,8 +120,7 @@ test.describe('Not covered flow', () => {
     
     await page.waitForURL('https://landing.staging.swordhealth.com/not-covered?client=lorem&program=bloom');
 
-    expect(page.getByLabel('Enter your employer or plan')).toHaveValue("lorem");
-
-    expect(page.locator('.css-1l8uzyq-container')).toHaveText("Bloom");
+    expect(page.getByLabel('Enter your employer or plan')).toHaveValue('lorem');
+    expect(page.locator('.css-1l8uzyq-container')).toHaveText('Bloom');
   })
 })
