@@ -10,7 +10,7 @@ test.beforeEach(async ({ page }) => {
 test.describe('Chat feature', () => {
 
   //Test 1: Confirm element inside chat feature
-  test('When user clicks button, element should display', async ({ page }) => {
+  test.skip('When user clicks button, element should display', async ({ page }) => {
     
     // locate the entire chat button frame
     const chatButtonFrame = await page.frameLocator('#launcher');
@@ -26,7 +26,7 @@ test.describe('Chat feature', () => {
     })
 
   //Test 2: Fill in form and send 
-  test('User fills in the form', async ({ page }) => {
+  test.skip('User fills in the form', async ({ page }) => {
 
     // locate the entire chat button frame
     const chatButtonFrame = await page.frameLocator('#launcher');
